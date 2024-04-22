@@ -38,7 +38,7 @@ const Chat = () => {
   return (
    <>
    <div className="flex h-screen">
-   <div className="bg-gray-200 w-3/6 md:w-1/6 p-4 flex flex-col justify-between cursor-pointer">
+   <div className="bg-gray-200 w-1/2 md:w-1/6 p-4 flex flex-col justify-between cursor-pointer">
   <div className='flex items-center flex-row md:flex-col'>
     <img src={image} className='w-10 h-10 border-2 rounded-full border-gray-800' alt="" />
     <h2 className='font-bold ml-3 text-xl'>Gemini</h2>
