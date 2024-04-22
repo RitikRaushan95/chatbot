@@ -1,5 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import image from './Gemini.png'
 
 const Chat = () => {
   const [question, setQuestion] = useState([]);
@@ -40,18 +43,24 @@ const Chat = () => {
    <div className="flex h-screen">
   <div className="flex flex-col w-full justify-center">
     <div className="flex-1 overflow-y-auto p-4">
-    <div className="flex justify-end w-full">
+    <div className="flex justify-end w-full items-center">
+      <FontAwesomeIcon icon={faUser} className="text-xl text-blue-600" />
         <div className="bg-gray-200 text-gray-800 p-3 rounded-lg">
           {question}
         </div>
     </div>
 
 
-      <div className="flex justify-start w-full">
-        <div className="bg-blue-200 text-gray-800 p-3 rounded-lg max-w-1/2">
-          {chatResponse}
-        </div>
-      </div>
+    <div className="flex justify-start w-2/3">
+  <div className="max-w-1/2 flex flex-col">
+    <img src={image} className='w-10 h-10 border-2 rounded-full border-gray-800' alt="" />
+    <span className='font-bold'>Gemini:</span>
+    <div className='bg-blue-200 text-gray-800 rounded-lg m-2 p-2'>
+       <spa>{chatResponse}</spa>
+    </div>
+  </div>
+</div>
+
     </div>
     
     {/* Chat input */}
