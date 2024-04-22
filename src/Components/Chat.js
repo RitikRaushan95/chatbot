@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser,faGear,faQuestion,faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
 import image from './Gemini.png'
 
 const Chat = () => {
@@ -38,10 +38,24 @@ const Chat = () => {
   return (
    <>
    <div className="flex h-screen">
-   <div className="bg-gray-200 w-1/6 p-4 flex justify-centre">
+   <div className="bg-gray-200 w-1/6 p-4 flex flex-col justify-between cursor-pointer">
+  <div className='flex items-center'>
     <img src={image} className='w-10 h-10 border-2 rounded-full border-gray-800' alt="" />
     <h2 className='font-bold ml-3 text-xl'>Gemini</h2>
-    </div>
+  </div>
+  <div  className='flex flex-col'>
+  <div>
+  <FontAwesomeIcon icon={faQuestion} />
+  </div>
+  <div>
+  <FontAwesomeIcon icon={faClockRotateLeft} />
+  </div>
+  <div>
+  <FontAwesomeIcon icon={faGear} />
+  </div>
+  </div>
+</div>
+
 
   <div className="flex flex-col w-full justify-center">
     <div className="flex-1 overflow-y-auto p-4">
