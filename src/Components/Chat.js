@@ -38,23 +38,27 @@ const Chat = () => {
   return (
    <>
    <div className="flex h-screen">
-   <div className="bg-gray-200 w-1/2 md:w-1/6 p-4 flex flex-col justify-between cursor-pointer">
-  <div className='flex items-center flex-row md:flex-col'>
-    <img src={image} className='w-10 h-10 border-2 rounded-full border-gray-800' alt="" />
-    <h2 className='font-bold ml-3 text-xl'>Gemini</h2>
-  </div>
-  <div  className='flex flex-col'>
-  <div>
-  <FontAwesomeIcon icon={faQuestion} />
-  </div>
-  <div>
-  <FontAwesomeIcon icon={faClockRotateLeft} />
-  </div>
-  <div>
-  <FontAwesomeIcon icon={faGear} />
-  </div>
+   <div className="bg-gray-200 w-full md:w-1/6 p-4 flex flex-col justify-between cursor-pointer md:flex-col">
+   <div className='flex items-center flex-row md:flex-col'>
+  <div className="md:flex flex-col md:flex-row">
+    <img src={image} className='w-10 h-10 border-2 rounded-full border-gray-800 md:mb-2' alt="" />
+    <h2 className='font-bold md:ml-3 text-xl'>Gemini</h2>
   </div>
 </div>
+
+          <div className='flex flex-col'>
+            <div>
+              <FontAwesomeIcon icon={faQuestion} />
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faClockRotateLeft} />
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faGear} />
+            </div>
+          </div>
+        </div>
+
 
 
   <div className="flex flex-col w-full justify-center">
@@ -84,7 +88,14 @@ const Chat = () => {
     
     
     <div className="flex items-center p-4 border-t ">
-      <input type="text" className="flex-1 px-4 py-2 mr-2 border rounded-full focus:outline-none focus:border-blue-500" placeholder="Type a message..." value={inputValue} onChange={handleInputChange} />
+    <input 
+  type="text" 
+  className="flex-1 px-4 py-2 mr-2 border rounded-full focus:outline-none focus:border-blue-500" 
+  placeholder="Type a message..." 
+  value={inputValue} 
+  onChange={handleInputChange} 
+/>
+
       <button className="px-4 py-2 text-white bg-blue-500 rounded-full" onClick={sendMessage}>
         Send
       </button>
